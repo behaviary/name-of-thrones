@@ -1,10 +1,10 @@
 # name-of-thrones
 
-FIXME: Write a one-line description of your library/project.
+Converts normal names into name that are worthy of a run at the iron throne.
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+This project takes a first and last name, and concatenates it with a randomly selected Game of Thrones name based on some trickery. It is a silly string manipulation clojurescript project that I created in a coule hours in my free time. Open to suggestions for how to make the naming chopper and adder stuff better.
 
 ## Setup
 
@@ -34,6 +34,6 @@ get live reloading, nor a REPL.
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2017 Peter DePaulo
 
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
+Distributed under the IDGAF Public License.
