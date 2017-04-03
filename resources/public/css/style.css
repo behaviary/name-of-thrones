@@ -1,2 +1,63 @@
 /* some style */
+@font-face {
+    font-family: 'Game of Thrones';
+    src: url('/font/Game_of_Thrones.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Game of Thrones', Impact, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(204, 214, 223, 0.8);
+}
+
+.mountains {
+    background: url("/images/mountain.png");
+    background-size: 100%;
+    background-position: 0 110%;
+    background-repeat: no-repeat;
+    height: 110vh;
+}
+
+.valyrian-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 60vh;
+}
+
+.throne-name {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    padding-top: 35px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
+    background: white;
+    border: 1px solid black;
+}
 

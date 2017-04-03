@@ -39,11 +39,11 @@
                 "Tyrion	Lannister"
                 "Jaime	Lannister"
                 "Cersei	Lannister"
-                "Robb	Stark"
+                "Robob	Stark"
                 "Sansa	Stark"
                 "Arya	Stark"
                 "Bran	Stark"
-                "Rickon	Stark"
+                "Ricikon	Stark"
                 "Rhaegar	Targaryen"
                 "Viserys	Targaryen"
                 "Daenerys	Targaryen"])
@@ -54,15 +54,19 @@
 (defn check-for-snow []
   (<= (rand) chance-of-snow))
 
-;; Test for check-for-snow
-;; (frequencies (repeatedly 100 check-for-snow))
-;; Using the ->> macro for readability
-;; (->> check-for-snow
-;;     (repeatedly 100)
-;;     frequencies)
+; ;; Test for check-for-snow
+; (frequencies (repeatedly 100 check-for-snow))
 
-(defn constonant? [ch]
+
+
+; ;; "Using the ->> macro for readability"
+; (->> check-for-snow
+;     (repeatedly 100)
+;     frequencies)
+
+(defn constonant? 
   "Checks if char or single string is constonant"
+  [ch]
   (let [str-ch (str ch)]
     (if (> (count str-ch) 1)
       false
@@ -83,8 +87,9 @@
 (defn convert-name-vec [nm-vec]
   (vec (map #(split-by-constonant %) nm-vec)))
 
-(defn split-name [nm]
+(defn split-name 
   "Splits name by spaces and strips extra spaces"
+  [nm]
   (str/split nm #"\s+"))
 
 (defn break-name [nm]
@@ -108,8 +113,9 @@
 
 ;; (grab-second-part [["Pet" "er"] ["DeP" "aulo"]] [["Fart" "y"] ["Barb" "arian"]])
 
-(defn thronesify [got-name nm]
+(defn thronesify
   "Combines the permutation of the names formatted [['n1' 'n2'] ['L1' 'L2']]"
+  [got-name nm]
   (let [fname (grab-part (first nm) (first got-name))
         lname (grab-part (second nm) (second got-name))]
     (str fname " " lname)))
@@ -126,8 +132,8 @@
   (let  [got-name (grab-da-throne got-names)]
     (if (check-for-snow)
       (let [fname (first (str/split og-name #" "))
-            snow "Snow"]
-        (str fname " " snow))
+            snow ["Snow" "Sand"]]
+        (str fname " " (rand-nth snow)))
       (->> og-name
            break-name
            (thronesify got-name)))))

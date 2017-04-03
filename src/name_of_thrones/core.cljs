@@ -19,25 +19,42 @@
 (defn show []
   (swap! app-state assoc :showing true))
 
+(defn handle-error []
+  (js/alert "You must enter a name"))
+
+(defn handle-form [name]
+  (when-let [n @name]
+   (if (empty? n)
+     (handle-error)
+     (do
+       (show)
+       (thronesify! n)
+       (reset! name "")))))
+
 (defn name-input []
   (let [name (atom "")]
     (fn []
-      [:div
+      [:div {:class "input-wrapper"}
         [:input {:type "text"
-                 :placeholder "Name"
+                 :placeholder "First and Last Name"
                  :value @name
+                 :on-key-press (fn [e]
+                                (if (= 13  (.-charCode e))
+                                  (handle-form name)))
                  :on-change #(reset! name (-> % .-target .-value))}]
-        [:button {:on-click #(when-let [n @name]
-                               (show)
-                               (thronesify! n)
-                               (reset! name ""))} "Thronesify"]])))
+        [:button {:type "submit"
+                  :on-click #(handle-form name)} "Thronesify"]])))
+
 (defn shared-state []
   (let [val app-state]
     (fn []
-      [:div
-        (when (:showing @val)
-          [:div "Your name is now: " (:throne-name @val)])
-       [:div [name-input]]])))
+      [:div {:class "mountains"}
+        [:div {:class "valyrian-wrapper"}
+         [:h1 {:class "title"} "NAME OF THRONES"]
+          (when (:showing @val)
+            [:div {:class "throne-name"} "Your name is now:  " 
+             [:p (:throne-name @val)]])
+         [:div {:class "name-input"} [name-input]]]])))
 
 (reagent/render-component [shared-state]
                           (. js/document (getElementById "app")))
