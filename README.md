@@ -2,7 +2,7 @@
 
 Converts normal names into names that are worthy of a run at the iron throne.
 
-demo: https://nameofthrones.life
+demo: https://www.nameofthrones.life
 
 ## How it looks
 
