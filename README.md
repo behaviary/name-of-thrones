@@ -1,6 +1,8 @@
+![Image of Site](/screen1.png)
+
 # name-of-thrones
 
-Converts normal names into name that are worthy of a run at the iron throne.
+Converts normal names into names that are worthy of a run at the iron throne.
 
 ## Overview
 
