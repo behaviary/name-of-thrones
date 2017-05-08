@@ -72,7 +72,7 @@
   [got-name nm]
   (let [fname (grab-part (first nm) (first got-name))
         lname (grab-part (second nm) (second got-name))]
-    (str fname " " lname)))
+    (str fname "  " lname)))
 
 (defn grab-da-throne [got-names]
   (-> got-names
@@ -84,7 +84,7 @@
     (if (check-for-snow)
       (let [fname (first (str/split og-name #" "))
             snow ["Snow" "Sand"]]
-        (str fname " " (rand-nth snow)))
+        (str fname "  " (rand-nth snow)))
       (->> og-name
            break-name
            (thronesify got-name)))))
