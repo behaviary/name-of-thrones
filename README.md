@@ -1,8 +1,17 @@
-![Image of Site](/screen1.png)
-
 # name-of-thrones
 
 Converts normal names into names that are worthy of a run at the iron throne.
+
+demo: https://nameofthrones.life
+
+## How it looks
+
+![Image of Site](https://github.com/pndpo/name-of-thrones/blob/master/resources/public/images/screen1.png)
+
+![Image of Site](https://github.com/pndpo/name-of-thrones/blob/master/resources/public/images/screen2.png)
+
+
+![Image of Site](https://github.com/pndpo/name-of-thrones/blob/master/resources/public/images/screen3.png)
 
 ## Overview
 
